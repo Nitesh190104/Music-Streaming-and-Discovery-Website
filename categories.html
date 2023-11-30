@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Categories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #4aae4f;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .category {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px;
+            width: 300px;
+        }
+
+        .category img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .category-content {
+            padding: 15px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        p {
+            margin: 10px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Music Categories</h1>
+    </header>
+
+    <section id="categories-section">
+        <!-- Categories will be dynamically added here using JavaScript -->
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Dummy data for categories (replace this with your actual data)
+            const categoriesData = [
+                { name: 'Pop', image: 'Pop.jpg' },
+                { name: 'Rap', image: 'Rap.jpg' },
+                { name: 'Jazz', image: 'Jazz.jpg' },
+                // Add more categories as needed
+            ];
+
+            const categoriesSection = document.getElementById('categories-section');
+
+            // Populate categories
+            categoriesData.forEach(category => {
+                const categoryElement = document.createElement('div');
+                categoryElement.classList.add('category');
+
+                const imageElement = document.createElement('img');
+                imageElement.src = category.image;
+                categoryElement.appendChild(imageElement);
+
+                const categoryContent = document.createElement('div');
+                categoryContent.classList.add('category-content');
+
+                const categoryName = document.createElement('h2');
+                categoryName.textContent = category.name;
+
+                const categoryDescription = document.createElement('p');
+                categoryDescription.textContent = 'Some description about the category...';
+
+                categoryContent.appendChild(categoryName);
+                categoryContent.appendChild(categoryDescription);
+
+                categoryElement.appendChild(categoryContent);
+
+                categoriesSection.appendChild(categoryElement);
+            });
+        });
+    </script>
+</body>
+</html>

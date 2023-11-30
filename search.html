@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Streaming Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #4aae4f;
+    }
+
+    header {
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgb(225, 215, 215);
+      box-shadow: 0 0 10px rgba(244, 240, 240, 0.1);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+
+    #results {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .result {
+      border: 1px solid #ddd;
+      margin: 5px 0;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .result:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Music Streaming Search</h1>
+  </header>
+  <button onclick="redirectToPage()">Go to Another Page</button>
+
+  <main>
+    <input type="text" id="searchInput" placeholder="Search for music...">
+    <ul id="results"></ul>
+  </main>
+  <script>
+    function redirectToPage() {
+        // Change 'another-page.html' to the actual filename of the HTML page you want to link to
+        window.location.href = 'Arijit.html';
+    }
+</script>
+
+  <script>
+    // Dummy data for demonstration purposes
+    const musicData = [
+      { title: 'Chaleya', artist: 'Arijit' },
+      { title: 'Heeriye', artist: 'Arijit' },
+      { title: 'Kesariya', artist: 'Arijit' },
+      { title: 'Tujhe Kitna chahne lage ham', artist: 'Arijit' },
+      { title: 'Safar', artist: 'Arijit' },
+      { title: 'Chitthi', artist: 'Jubin' },
+      { title: 'Lut Gaye', artist: 'Jubin' },
+      { title: 'Bewafa Tera Masoom Chehra', artist: 'Jubin' },
+      { title: 'Meri Ashiqui', artist: 'Jubin' },
+      { title: 'Humnava Mere', artist: 'Jubin' },
+      { title: 'KalaaStar', artist: 'Honey' },
+      { title: 'Aankhon Aankhon', artist: 'Honey' },
+      { title: 'Fugly', artist: 'Honey' },
+      { title: 'Lonely', artist: 'Honey' },
+      { title: 'Love Dose', artist: 'Honey' },
+      { title: 'Tumse Milke Dilka Jo Haal', artist: 'Sonu' },
+      { title: 'Abhi Mujh Mein Kahin', artist: 'Sonu' },
+      { title: 'Main Hoon Na', artist: 'Sonu' },
+      { title: 'Yeh Dil Deewana', artist: 'Sonu' },
+      { title: 'Suraj Hua Maddham', artist: 'Sonu' },
+      { title: 'Kaise Bataye Kyun Tujhko Chahe', artist: 'Atif' },
+      { title: 'Dil Meri Na Sune', artist: 'Atif' },
+      { title: 'Dekhte Dekhte', artist: 'Atif' },
+      { title: 'Jeene Laga Hoon', artist: 'Atif' },
+      { title: 'Main Rang Sharbaton Ka', artist: 'Atif' },
+      
+      // Add more data as needed
+    ];
+
+    const searchInput = document.getElementById('searchInput');
+    const resultsList = document.getElementById('results');
+
+    // Function to perform search and display results
+    function searchMusic() {
+      const query = searchInput.value.toLowerCase();
+      const filteredResults = musicData.filter(
+        song => song.title.toLowerCase().includes(query) || song.artist.toLowerCase().includes(query)
+      );
+
+      // Clear previous results
+      resultsList.innerHTML = '';
+
+      // Display new results
+      filteredResults.forEach(song => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('result');
+        listItem.textContent = `${song.title} - ${song.artist}`;
+        resultsList.appendChild(listItem);
+      });
+    }
+
+    // Trigger search on input change
+    searchInput.addEventListener('input', searchMusic);
+  </script>
+</body>
+
+</html>

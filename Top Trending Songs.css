@@ -1,0 +1,42 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#4CAF50;;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #000000;
+    padding: 20px;
+    color: #eee8e8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+#songList {
+    list-style: none;
+    padding: 0;
+}
+
+.song {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #eee8e8;
+    border-radius: 4px;
+}
+
+.song img {
+    max-width: 100%;
+    height: auto;
+}
+
+.song p {
+    margin: 10px 0;
+}

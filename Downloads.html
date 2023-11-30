@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Download Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #4CAF50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .download-button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<button class="download-button" onclick="downloadMusic()">Download Music</button>
+
+<script>
+  function downloadMusic() {
+    // Replace 'music_url.mp3' with the actual URL of the music file you want to download
+    var musicUrl = 'music_url.mp3';
+
+    // Create a temporary link element
+    var link = document.createElement('a');
+
+    // Set the download attribute with the desired filename
+    link.download = 'music_filename.mp3';
+
+    // Set the href attribute to the music file's URL
+    link.href = musicUrl;
+
+    // Append the link to the document body
+    document.body.appendChild(link);
+
+    // Trigger a click on the link to start the download
+    link.click();
+
+    // Remove the link from the document body
+    document.body.removeChild(link);
+  }
+</script>
+
+</body>
+</html>
